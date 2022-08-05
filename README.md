@@ -12,6 +12,17 @@ For full and up to date instructions for the different available plugin
 installation methods, refer to [How to Install a Plugin](https://coreruleset.org/docs/concepts/plugins/#how-to-install-a-plugin)
 in the official CRS documentation.
 
+## Configuration
+
+All settings can be done in file `plugins/phpmyadmin-rule-exclusions-config.conf`.
+
+### tx.phpmyadmin-rule-exclusions-plugin_url_format
+
+phpMyAdmin completely changed URL structure from version 5.1.0 so, if you are
+running older version, set this setting to `old`. Otherwise, keep it to `v51`.
+
+Default value: v51
+
 ## Testing
 
 After the plugin is enabled, your phpMyAdmin instance should work without any

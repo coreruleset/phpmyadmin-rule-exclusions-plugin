@@ -4,3 +4,11 @@ on: [push, pull_request]        # yamllint disable-line rule:truthy
 jobs:
   plugin-lint:
     uses: coreruleset/crs-plugin-test-action/.github/workflows/integration.yaml@main
+    with:
+      plugin-config: |
+        SecRule &TX:phpmyadmin-rule-exclusions-plugin_enabled "@eq 0" \
+          "id:9513010,\
+          phase:1,\
+          pass,\
+          nolog,\
+          setvar:'tx.phpmyadmin-rule-exclusions-plugin_enabled=1'"

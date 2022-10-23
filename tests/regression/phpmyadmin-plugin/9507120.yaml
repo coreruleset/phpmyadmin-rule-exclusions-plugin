@@ -6,7 +6,7 @@ meta:
   name: 9513370.yaml
 tests:
   - test_title: 9513370-1
-    desc: Check FPs Zoom Search 
+    desc: Check FPs Zoom Search
     stages:
       - stage:
           input:
@@ -14,8 +14,7 @@ tests:
             headers:
               Host: localhost
               User-Agent: OWASP ModSecurity Core Rule Set
-              #Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-              Accept: */*
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
               Cookie: phpMyAdmin=1
             port: 80
             method: POST

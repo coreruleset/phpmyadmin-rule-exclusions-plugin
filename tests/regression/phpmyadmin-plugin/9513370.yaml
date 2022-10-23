@@ -1,7 +1,7 @@
 ---
 meta:
   author: "Felipe Zipitria"
-  description: "Test PHPMyAdmin Exclusion Plugin"
+  description: "Test PhpMyAdmin Plugin"
   enabled: true
   name: 9513370.yaml
 tests:

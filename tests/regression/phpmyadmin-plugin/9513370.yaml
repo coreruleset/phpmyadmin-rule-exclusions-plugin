@@ -6,7 +6,7 @@ meta:
   name: 9513370.yaml
 tests:
   - test_title: 9513370-1
-    desc: Check FPs Zoom Search
+    desc: Check FPs Zoom Search - Targets the removed rule (942140)
     stages:
       - stage:
           input:
@@ -21,4 +21,4 @@ tests:
             uri: /post/tbl_zoom_select.php
             data: db=mytestdb
           output:
-            log_contains: id "9513370"
+            no_log_contains: id "942140"

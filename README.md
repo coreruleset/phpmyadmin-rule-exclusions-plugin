@@ -1,10 +1,10 @@
-# OWASP ModSecurity Core Rule Set - phpMyAdmin Rule Exclusions Plugin
+# OWASP CRS - phpMyAdmin Rule Exclusions Plugin
 
 ## Description
 
 This plugin contains rule exclusions for [phpMyAdmin](https://www.phpmyadmin.net/),
 a tool intended to handle the administration of MySQL over the Web, so it can be
-run flawlessly togather with OWASP ModSecurity Core Rule Set (CRS).
+run flawlessly togather with OWASP CRS (CRS).
 
 ## Installation
 
@@ -32,8 +32,8 @@ requests). If you are still having any problems, please file a new issue on
 
 ## License
 
-Copyright (c) 2022 OWASP ModSecurity Core Rule Set project. All rights reserved.
+Copyright (c) 2022 OWASP CRS project. All rights reserved.
 
-The OWASP ModSecurity Core Rule Set and its official plugins are distributed
+The OWASP CRS and its official plugins are distributed
 under Apache Software License (ASL) version 2. Please see the enclosed LICENSE
 file for full details.

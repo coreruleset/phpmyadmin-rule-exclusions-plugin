@@ -1,5 +1,8 @@
 # OWASP CRS - phpMyAdmin Rule Exclusions Plugin
 
+[![.github/workflows/integration.yml](https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin/actions/workflows/integration.yml/badge.svg)](https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin/actions/workflows/integration.yml)
+[![.github/workflows/lint.yml](https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin/actions/workflows/lint.yml/badge.svg)](https://github.com/coreruleset/phpmyadmin-rule-exclusions-plugin/actions/workflows/lint.yml)
+
 ## Description
 
 This plugin contains rule exclusions for [phpMyAdmin](https://www.phpmyadmin.net/),
@@ -32,7 +35,7 @@ requests). If you are still having any problems, please file a new issue on
 
 ## License
 
-Copyright (c) 2022 OWASP CRS project. All rights reserved.
+Copyright (c) 2022-2024 OWASP CRS project. All rights reserved.
 
 The OWASP CRS and its official plugins are distributed
 under Apache Software License (ASL) version 2. Please see the enclosed LICENSE

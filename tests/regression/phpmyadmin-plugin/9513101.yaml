@@ -1,7 +1,7 @@
 ---
 meta:
   author: "azurit"
-  description: "Test PhpMyAdmin Plugin"
+  description: "PhpMyAdmin Rule Exclusions Plugin"
   enabled: true
   name: 9513101.yaml
 tests:

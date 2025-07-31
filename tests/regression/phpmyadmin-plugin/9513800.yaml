@@ -2,7 +2,6 @@
 meta:
   author: "azurit"
   description: "Test PhpMyAdmin Plugin"
-  enabled: true
   rule_id: 9513800
 tests:
   - test_id: 1

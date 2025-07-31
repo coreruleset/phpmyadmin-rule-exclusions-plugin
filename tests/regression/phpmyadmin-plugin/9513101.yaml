@@ -2,7 +2,7 @@
 meta:
   author: "azurit"
   description: "PhpMyAdmin Rule Exclusions Plugin"
-  rule_id: 9513101
+rule_id: 9513101
 tests:
   - test_id: 1
     desc: FP while accessing file sprintf.js

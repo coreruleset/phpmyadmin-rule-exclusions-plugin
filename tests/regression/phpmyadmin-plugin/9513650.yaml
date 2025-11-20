@@ -18,7 +18,7 @@ tests:
           method: POST
           version: HTTP/1.1
           uri: /post/index.php?route=/sql
-          data: goto=index.php?db=test&goto=index.php
+          data: goto=index.php%3Fdb%3Dtest%26goto%3Dindex.php
         output:
           log:
             no_expect_ids: [932380]

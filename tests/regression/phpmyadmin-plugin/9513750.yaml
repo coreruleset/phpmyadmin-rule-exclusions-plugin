@@ -21,4 +21,6 @@ tests:
           data: compression=gzip
         output:
           log:
-            no_expect_ids: [932260]
+            no_expect_ids:
+              - 932236
+              - 932260

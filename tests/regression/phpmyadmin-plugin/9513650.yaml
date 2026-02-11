@@ -22,3 +22,27 @@ tests:
         output:
           log:
             no_expect_ids: [932380]
+  - test_id: 2
+    desc: FP with sql_query parameter and JOIN keyword
+    stages:
+      - input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: "OWASP CRS test agent"
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            Cookie: phpMyAdmin=1
+          port: 80
+          method: POST
+          version: HTTP/1.1
+          uri: /post/index.php?route=/sql
+          data: |-
+            sql_query=SELECT link_rewrite, COUNT(*) c
+            FROM ps_product_lang pl
+            JOIN ps_product_shop ps ON ps.id_product = pl.id_product AND ps.id_shop = 2
+            WHERE pl.id_lang = 8
+            GROUP BY link_rewrite
+            HAVING c > 1;
+        output:
+          log:
+            no_expect_ids: [932235]

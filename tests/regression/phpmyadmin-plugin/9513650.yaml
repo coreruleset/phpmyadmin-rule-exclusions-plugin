@@ -23,7 +23,16 @@ tests:
           log:
             no_expect_ids: [932380]
   - test_id: 2
-    desc: FP with sql_query parameter and JOIN keyword
+    desc: |
+      FP with sql_query parameter and JOIN keyword
+      Decoded payload:
+
+      SELECT link_rewrite, COUNT(*) c
+      FROM ps_product_lang pl
+      JOIN ps_product_shop ps ON ps.id_product = pl.id_product AND ps.id_shop = 2
+      WHERE pl.id_lang = 8
+      GROUP BY link_rewrite
+      HAVING c > 1;
     stages:
       - input:
           dest_addr: 127.0.0.1
@@ -32,17 +41,12 @@ tests:
             User-Agent: "OWASP CRS test agent"
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             Cookie: phpMyAdmin=1
+            Content-Type: application/x-www-form-urlencoded
           port: 80
           method: POST
           version: HTTP/1.1
           uri: /post/index.php?route=/sql
-          data: |-
-            sql_query=SELECT link_rewrite, COUNT(*) c
-            FROM ps_product_lang pl
-            JOIN ps_product_shop ps ON ps.id_product = pl.id_product AND ps.id_shop = 2
-            WHERE pl.id_lang = 8
-            GROUP BY link_rewrite
-            HAVING c > 1;
+          data: sql_query=SELECT%20link_rewrite%2C%20COUNT%28%2A%29%20c%0AFROM%20ps_product_lang%20pl%0AJOIN%20ps_product_shop%20ps%20ON%20ps.id_product%20%3D%20pl.id_product%20AND%20ps.id_shop%20%3D%202%0AWHERE%20pl.id_lang%20%3D%208%0AGROUP%20BY%20link_rewrite%0AHAVING%20c%20%3E%201%3B
         output:
           log:
             no_expect_ids: [932235]

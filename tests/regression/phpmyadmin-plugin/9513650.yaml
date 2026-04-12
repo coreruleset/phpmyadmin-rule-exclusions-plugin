@@ -51,7 +51,7 @@ tests:
           log:
             no_expect_ids: [932235]
   - test_id: 3
-    desc: FP with sql_query parameter
+    desc: FP with IS_NULLABLE keyword
     stages:
       - input:
           dest_addr: 127.0.0.1

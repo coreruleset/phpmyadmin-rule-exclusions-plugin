@@ -6,7 +6,7 @@
 #  rule_id: 9513420
 # tests:
 #  - test_id: 1
-#    desc: FP item_definition parameter
+#    desc: FP with JOIN keyword inside item_definition parameter
 #    stages:
 #      - input:
 #          dest_addr: 127.0.0.1

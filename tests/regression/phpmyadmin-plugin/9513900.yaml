@@ -5,7 +5,7 @@ meta:
   rule_id: 9513900
 tests:
   - test_id: 1
-    desc: FP with sql parameter
+    desc: FP with DATE_FORMAT() function
     stages:
       - input:
           dest_addr: 127.0.0.1

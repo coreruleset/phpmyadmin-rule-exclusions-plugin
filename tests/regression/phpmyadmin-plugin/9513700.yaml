@@ -46,3 +46,23 @@ tests:
         output:
           log:
             no_expect_ids: [932180]
+  - test_id: 3
+    desc: FP related to data import (command time)
+    stages:
+      - input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: "OWASP CRS test agent"
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            Cookie: phpMyAdmin=1
+          port: 80
+          method: POST
+          version: HTTP/1.1
+          uri: /post/index.php?route=/import
+          data: sql_query=CREATE%20TABLE%20t_event%20%28%0A%20%20id%20%20%20%20%20%20%20%20%20%20%20%20INT%20NOT%20NULL%20AUTO_INCREMENT%20PRIMARY%20KEY%2C%0A%20%20nl_castle_id%20%20INT%20NOT%20NULL%2C%0A%20%20nl_target_id%20%20INT%20NOT%20NULL%20DEFAULT%200%2C%0A%20%20uv_type%20%20%20%20%20%20%20VARCHAR%2832%29%20NOT%20NULL%2C%0A%20%20nl_amount%20%20%20%20%20INT%20NOT%20NULL%20DEFAULT%200%2C%0A%20%20uv_data%20%20%20%20%20%20%20TEXT%20NULL%2C%0A%20%20uv_result%20%20%20%20%20TEXT%20NULL%2C%0A%20%20ts_start%20%20%20%20%20%20TIMESTAMP%20NOT%20NULL%20DEFAULT%20current_timestamp%28%29%2C%0A%20%20ts_finish%20%20%20%20%20DATETIME%20NOT%20NULL%2C%0A%20%20nl_status%20%20%20%20%20VARCHAR%2816%29%20NOT%20NULL%20DEFAULT%20%27pending%27%2C%0A%20%20KEY%20ix_due%20%28nl_status%2C%20ts_finish%29%2C%0A%20%20KEY%20ix_castle%20%28nl_castle_id%29%0A%29%20ENGINE%3DInnoDB%20DEFAULT%20CHARSET%3Dutf8%20COLLATE%3Dutf8_slovak_ci%3B
+        output:
+          log:
+            no_expect_ids:
+              - 932230
+              - 932250

@@ -1,0 +1,25 @@
+# This test is disabled because it needs changes in the plugin configuration, which is currently not supported by FTW.
+# ---
+# meta:
+#   author: "azurit"
+#   description: "Test PhpMyAdmin Plugin"
+#   rule_id: 9513330
+# tests:
+#   - test_id: 1
+#     desc: Check FPs with the CONVERT keyword
+#     stages:
+#       - input:
+#          dest_addr: 127.0.0.1
+#            headers:
+#             Host: localhost
+#             User-Agent: "OWASP CRS test agent"
+#             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+#             Cookie: phpMyAdmin=1
+#           port: 80
+#           method: POST
+#           version: HTTP/1.1
+#           uri: /post/tbl_export.php
+#           data: sql_query=SELECT%20CONCAT%28%27ALTER%20TABLE%20%60%27%2C%20TABLE_NAME%2C%20%27%60%20CONVERT%20TO%20CHARACTER%20SET%20utf8mb4%20COLLATE%20utf8mb4_unicode_ci%3B%27%29%20AS%20stmt%0AFROM%20information_schema.TABLES%0AWHERE%20TABLE_SCHEMA%20%3D%20%27censored%27%20AND%20TABLE_TYPE%20%3D%20%27BASE%20TABLE%27%0ALIMIT%20100
+#         output:
+#           log:
+#             no_expect_ids: [932110]

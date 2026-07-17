@@ -6,7 +6,7 @@
 #   rule_id: 9513220
 # tests:
 #   - test_id: 1
-#     desc: Check FPs with the CONVERT keyword
+#     desc: Check FPs with the lastLogin keyword
 #     stages:
 #       - input:
 #          dest_addr: 127.0.0.1

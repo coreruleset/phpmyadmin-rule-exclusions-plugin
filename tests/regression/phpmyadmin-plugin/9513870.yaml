@@ -1,0 +1,24 @@
+---
+meta:
+  author: "azurit"
+  description: "PhpMyAdmin Rule Exclusions Plugin"
+  rule_id: 9513870
+tests:
+  - test_id: 1
+    desc: FP with UPDATE keyword inside sql_query parameter
+    stages:
+      - input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: "OWASP CRS test agent"
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            Cookie: phpMyAdmin=1
+          port: 80
+          method: POST
+          version: HTTP/1.1
+          uri: /post/index.php?route=/import/simulate-dml
+          data: sql_query=UPDATE%20ps_configuration%0ASET%20value%20%3D%20%27tls%27%2C%20date_upd%20%3D%20NOW%28%29%0AWHERE%20id_shop%20%3D%202%0A%20%20AND%20name%20%3D%20%27PS_MAIL_SMTP_ENCRYPTION%27%3B%0A%0AUPDATE%20ps_configuration%0ASET%20value%20%3D%20%27587%27%2C%20date_upd%20%3D%20NOW%28%29%0AWHERE%20id_shop%20%3D%202%0A%20%20AND%20name%20%3D%20%27PS_MAIL_SMTP_PORT%27%3B
+        output:
+          log:
+            no_expect_ids: [932370]

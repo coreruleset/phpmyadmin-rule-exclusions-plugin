@@ -13,12 +13,11 @@ tests:
             Host: localhost
             User-Agent: "OWASP CRS test agent"
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Cookie: phpMyAdmin=1
             Referer: "http://example.com/index.php?sql_query=SELECT+%2A+FROM+%60a%60+where+b+like+%27%25c%25%27"
           port: 80
           method: GET
           version: HTTP/1.1
-          uri: /get
+          uri: /
         output:
           log:
             no_expect_ids: [942100]
@@ -31,12 +30,28 @@ tests:
             Host: localhost
             User-Agent: "OWASP CRS test agent"
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Cookie: phpMyAdmin=1
             Referer: "http://example.com/index.php?sql_query=SELECT+%2A+FROM+%60city%60+%0AORDER+BY"
           port: 80
           method: GET
           version: HTTP/1.1
-          uri: /get
+          uri: /
         output:
           log:
             no_expect_ids: [921140]
+  - test_id: 3
+    desc: FP inside Cookies - /sys/
+    stages:
+      - input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: "OWASP CRS test agent"
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            Cookie: __Secure-pmaUser-2_https=Jd6T%2BrEDmLAxMTF4YLtugvo8n9MyIDuN0J%2FsYs%2FsMHIaCu5nhwuTt7G%2FnElIN25cFb0IXA%3D%3D;
+          port: 80
+          method: GET
+          version: HTTP/1.1
+          uri: /
+        output:
+          log:
+            no_expect_ids: [930120]

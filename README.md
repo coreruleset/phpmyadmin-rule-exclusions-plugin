@@ -30,6 +30,14 @@ running older version, set this setting to `old`. Otherwise, keep it to `v51`.
 
 Default value: v51
 
+### tx.phpmyadmin-rule-exclusions-plugin_allowed_domains
+
+By default, the plugin only works on specific domains. These domains must be
+explicitly configured in this setting using the following format:
+`|example.com| |www.example.com|`
+
+Default value:
+
 ## Testing
 
 After the plugin is enabled, your phpMyAdmin instance should work without any
